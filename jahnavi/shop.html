@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Art & Craft Supplies - Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Art & Craft Supplies</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cart Button -->
+    <div class="cart-container">
+        <button id="cart-button" onclick="toggleCart()">Cart (0)</button>
+    </div>
+
+    <!-- Shop Section -->
+    <section class="shop">
+        <h2>Our Art & Craft Supplies</h2>
+        <div class="product-gallery">
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/71rGE6DrZQL._AC_UF894,1000_QL80_.jpg" alt="Brush Cleaner">
+                <p>Brush Cleaner - $70</p>
+                <button class="add-to-cart-button" onclick="addToCart('Brush Cleaner', 70)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81Ln71VhHqS.jpg" alt="Sakura Finelener">
+                <p>Sakura Fineliner Set - $55</p>
+                <button class="add-to-cart-button" onclick="addToCart('Sakura Fineliner', 55)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/513rwLULF+L._AC_UF894,1000_QL80_.jpg" alt="Mini Stamps">
+                <p>Mini Stamps - $40</p>
+                <button class="add-to-cart-button" onclick="addToCart('Mini Stamps', 40)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/71FwkYYKZoL.jpg" alt="Water Brush">
+                <p>Water Brush - $45</p>
+                <button class="add-to-cart-button" onclick="addToCart('Water Brush', 45)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/7181p9JwTaL._AC_UF1000,1000_QL80_.jpg" alt="Paint Set">
+                <p>Watercolor Paint Set - $30</p>
+                <button class="add-to-cart-button" onclick="addToCart('Watercolor Paint Set', 30)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://5.imimg.com/data5/ECOM/Default/2024/4/412141566/US/WQ/RW/184740997/51yzz9xlyvl-500x500.jpg" alt="Brush Set">
+                <p>Brush Set - $25</p>
+                <button class="add-to-cart-button" onclick="addToCart('Brush Set', 25)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/613cEBk5fiL._AC_UF894,1000_QL80_.jpg" alt="Colored Pencils">
+                <p>Colored Pencils - $25</p>
+                <button class="add-to-cart-button" onclick="addToCart('Colored Pencils', 25)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/kpsnzww0/art-set/w/x/n/fevicol-craft-and-general-adhesives-2-fevistik-15gm-2-fevicol-mr-original-imag3y5wms4trmeh.jpeg?q=20&crop=false" alt="Glue">
+                <p>Craft Glue - $5</p>
+                <button class="add-to-cart-button" onclick="addToCart('Craft Glue', 5)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/scissor/l/o/z/6-pieces-art-and-craft-zig-zag-paper-shaper-scissor-set-of-6-zig-original-imahfmaxwvzvkjp8.jpeg?q=90&crop=false" alt="Scissors">
+                <p>Craft Scissors - $8</p>
+                <button class="add-to-cart-button" onclick="addToCart('Craft Scissors', 8)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/717HJ-MvaqL._AC_UL210_SR210,210_.jpg" alt="Paper Sheets">
+                <p>Colored Paper Sheets - $10</p>
+                <button class="add-to-cart-button" onclick="addToCart('Colored Paper Sheets', 10)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81FfXvRivpL._AC_UF894,1000_QL80_.jpg" alt="Ribbon">
+                <p>Craft Ribbon - $30</p>
+                <button class="add-to-cart-button" onclick="addToCart('Craft Ribbon', 30)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81r-AUopKWL._AC_UF894,1000_QL80_.jpg" alt="Clay">
+                <p>Modeling Clay - $20</p>
+                <button class="add-to-cart-button" onclick="addToCart('Modeling Clay', 20)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div id="cart" class="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </ul>
+        <p>Total: $<span id="total-price">0</span></p>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="goToCheckout()">Checkout</button>
+        <button onclick="toggleCart()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Art & Craft Supplies. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
